@@ -1,73 +1,107 @@
-# Soft-robotic project
+# Soft Robotic Project
 
-This repository contains a series of ML experiments on PUMS finger (surface estimation, surface classification, and tool estimation) and on PUMS gripper (object recognition and width prediction) for the paper: Proprioception with high spatiotemporal accuracy from unstructured multichannel sensing in soft robots.
+This repository contains a series of machine learning experiments on the PUMS system described in:
 
-# Experiments performed
+**“Proprioception with high spatiotemporal accuracy from unstructured multichannel sensing in soft robots.”**
 
-PUMS finger
+Experiments are performed on:
 
-1.  Surface Estimation
-    Estimating the surface geometry pressed on a soft finger.
-    A) training set reduction
-    B) sensor reduction
+- PUMS finger (surface estimation, surface classification, tool estimation)
+- PUMS gripper (object recognition, width prediction)
 
-2.  Surface Classification
-    Classifying the surface (35 classes in 4 positions) used in the surface estimation experiment
+---
 
-3.  Tool Estimation (or Tool position and force estimation in the paper)
-    Estimating the position and force of a tool mounted on the tip of the PUMS finger.
-    A) training set reduction
-    B) sensor reduction
+# Experiments
 
-PUMS gripper
+## PUMS Finger
 
-1.  Object Recognition (or Object identification in the paper)
-    Identify which object the gripper is holding. The dataset is made of 9 classes (8 objects + empty grasp).
-    A) training set reduction
-    B) sensor reduction
-    C) flip fingers
+### 1. Surface Estimation
 
-2.  Width Prediction (or Object length estimation in the paper)
-    Predicting the width of the grasped object (same shape) while varying the angle of grasp.
-    A) training set reduction
-    B) sensor reduction
-    C) flip fingers
+Estimation of the surface geometry pressed on a soft finger.
 
-Principal component analysis (PCA)
-A) PCA of the input matrices on each dataset.
-B) A remocal of the N last components was also investigated on the surface estimation dataset.
+- A) training set reduction
+- B) sensor reduction
 
-# Installation steps
+---
 
-1. Clone the repo
-   git clone <repository-url>
-   cd PUMS_code
-2. Create and activate a virtual environment
-   python -m venv sr_env
-   source sr_env/bin/activate # Linux/macOS
-   sr_env\Scripts\activate # Windows
-3. Install dependencies
-   pip install -r requirements.txt
-4. Prepare the datasets and trained models
-   Download the datasets and trained models
-   Make sure they are correctly placed (see next section)
+### 2. Surface Classification
 
-# Folders
+Classification of surfaces used in the surface estimation task.
 
-PUMS_code/
-│
-├── CADs/ # .stl of all 3D printed objects and molds in the paper.
-│
-├── experiments/ # Code for all 4 ML experiments (plus the surface estimation converted into a surface classification) and PCA
-│
-├── figures/ # Saved plots, visualizations, and outputs
-│
-├── PCBs_pdf/ # PDFs (schematics and PCB layers) of all the boards used for PUMS.
-│
-├── nogit_dataset/ # Add the datasets (not tracked on Git, get the data here: https://zenodo.org/uploads/20838108)
-│
-├── nogit_NN/ # Trained Neural Network models (not tracked on Git, create a folder here with this name)
-│
-├── results/ # Result data used to preduce figures.
-│
-└── README.md # Project documentation
+- 35 classes
+- 4 contact positions
+
+---
+
+### 3. Tool Estimation (Tool position and force estimation in paper)
+
+Estimation of tool position and applied force at the fingertip.
+
+- A) training set reduction
+- B) sensor reduction
+
+---
+
+## PUMS Gripper
+
+### 1. Object Recognition (Object identification in paper)
+
+Identification of grasped objects.
+
+- 9 classes (8 objects + empty grasp)
+- A) training set reduction
+- B) sensor reduction
+- C) finger flipping experiments
+
+---
+
+### 2. Width Prediction (Object length estimation in paper)
+
+Prediction of object width under varying grasp angles.
+
+- A) training set reduction
+- B) sensor reduction
+- C) finger flipping experiments
+
+---
+
+## Principal Component Analysis (PCA)
+
+PCA is applied across datasets to analyze input structure.
+
+- A) PCA on input matrices for each dataset
+- B) removal of the last N principal components (surface estimation dataset)
+
+---
+
+# Installation
+
+## 1. Clone repository
+
+```bash
+git clone <repository-url>
+cd PUMS_code
+```
+
+## 2. Clone repository
+
+```bash
+python -m venv sr_env
+source sr_env/bin/activate # on Linux/macOS and sr_env\Scripts\activate on Windows
+```
+
+## 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## 4. Prepare data and folders
+
+- **CADs/**: 3D printed parts and molds (.stl)
+- **experiments/**: ML pipelines (PCA, surface estimation, classification)
+- **figures/**: Generated figures for publication
+- **PCBs_pdf/**: PCB design exports (schematics + layers)
+- **nogit_dataset/**: External datasets (Zenodo link: https://zenodo.org/uploads/20838108)
+- **nogit_NN/**: Trained models (not versioned; create the folder)
+- **results/**: Raw experiment outputs used for plots
