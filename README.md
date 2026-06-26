@@ -1,4 +1,4 @@
-# Soft Robotic Project
+# PUMS Project
 
 This repository contains a series of machine learning experiments on the PUMS system described in:
 
@@ -26,10 +26,7 @@ Estimation of the surface geometry pressed on a soft finger.
 
 ### 2. Surface Classification
 
-Classification of surfaces used in the surface estimation task.
-
-- 35 classes
-- 4 contact positions
+Classification of surfaces used in the surface estimation task. 35 classes and 4 contact positions
 
 ---
 
@@ -46,9 +43,8 @@ Estimation of tool position and applied force at the fingertip.
 
 ### 1. Object Recognition (Object identification in paper)
 
-Identification of grasped objects.
+Identification of grasped objects. 9 classes (8 objects + empty grasp)
 
-- 9 classes (8 objects + empty grasp)
 - A) training set reduction
 - B) sensor reduction
 - C) finger flipping experiments
