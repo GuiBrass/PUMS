@@ -1,0 +1,8 @@
+nogit_datasets/
+nogit_NN/
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+sr_env

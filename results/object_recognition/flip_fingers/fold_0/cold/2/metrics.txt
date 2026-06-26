@@ -1,0 +1,2 @@
+test_accuracy = 0.6364
+test_loss = 1.0507

@@ -1,0 +1,6 @@
+MAE_mm = 2.0783
+RMSE_mm = 2.8293
+Bias = -1.0955
+STD = 2.6086
+Perp_mean = 1.2207
+Perp_std = 1.0367
